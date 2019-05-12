@@ -1,18 +1,40 @@
+##########
+# Windows 10 Initial Setup Script
+# Based on https://github.com/Disassembler0/Win10-Initial-Setup-Script ... 
+# ... and https://gist.github.com/alirobe/7f3b34ad89a159e6daa1/ 
+#
+##########
 
 $tweaks = @(
 	### Require administrator privileges ###
 	
 	  "RequireAdmin",
 
-	### Privacy Settings ###
+	### Main settings ###
 	
+	  "MainSettings"
+
+	### Uninstall programs ###
+	  
+	 "Uninstall"
+
+
+
+	### Privacy Settings ###
+
+
+	
+	 "SetPhotoViewerAssociation",
+
+	 "UnpinStartMenuTiles",
+
 	  "DisableTelemetry",
 	
 	  "DisableWiFiSense",             
 	# "EnableWiFiSense",
 	
-	  "DisableSmartScreen",           
-	# "EnableSmartScreen",
+	# "DisableSmartScreen",           
+	 "EnableSmartScreen",
 	
 	  "DisableWebSearch",             
 	# "EnableWebSearch",
@@ -23,10 +45,10 @@ $tweaks = @(
 	  "DisableBackgroundApps",        
 	# "EnableBackgroundApps",
 	
-	  "DisableLockScreenSpotlight",   
+	# "DisableLockScreenSpotlight",   
 	# "EnableLockScreenSpotlight",
 	
-	  "DisableLocationTracking",      
+	 "DisableLocationTracking",      
 	# "EnableLocationTracking",	
 	 
 	  "DisableFeedback",
@@ -49,77 +71,218 @@ $tweaks = @(
 	  "DisableWAPPush",               
 	# "EnableWAPPush",
 
+
+
 	### Service Tweaks ###
 
-	"SetUACLow",                    # "SetUACHigh",
-	# "EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
-	"DisableAdminShares",           # "EnableAdminShares",
-	# "DisableSMB1",                # "EnableSMB1",
-	"SetCurrentNetworkPrivate",     # "SetCurrentNetworkPublic",
-	# "SetUnknownNetworksPrivate",  # "SetUnknownNetworksPublic",
-	"EnableCtrldFolderAccess",      # "DisableCtrldFolderAccess",
-	# "DisableFirewall",            # "EnableFirewall",
-	# "DisableDefender",            # "EnableDefender",
-	# "DisableDefenderCloud",       # "EnableDefenderCloud",
-	# "DisableUpdateMSRT",          # "EnableUpdateMSRT",
-	# "DisableUpdateDriver",        # "EnableUpdateDriver",
-	"DisableUpdateRestart",         # "EnableUpdateRestart",
-	"DisableHomeGroups",            # "EnableHomeGroups",
-	"DisableSharedExperiences",     # "EnableSharedExperiences",
-	"DisableRemoteAssistance",      # "EnableRemoteAssistance",
-	"DisableRemoteDesktop",         # "EnableRemoteDesktop",
-	"DisableAutoplay",              # "EnableAutoplay",
-	"DisableAutorun",               # "EnableAutorun",
-	"EnableStorageSense",           # "DisableStorageSense",
-	# "DisableDefragmentation",     # "EnableDefragmentation",
-	"DisableSuperfetch",            # "EnableSuperfetch",
-	"DisableIndexing",              # "EnableIndexing",
-	# "SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
-	"DisableHibernation",           # "EnableHibernation",
-	#"DisableFastStartup",          
-	"EnableFastStartup",
+
+
+	  "SetUACLow",                    
+	# "SetUACHigh",
+
+	# "EnableSharingMappedDrives",  
+	# "DisableSharingMappedDrives",
+	
+	  "DisableAdminShares",           
+	# "EnableAdminShares",
+	
+	# "DisableSMB1",                
+	# "EnableSMB1",
+	
+	  "SetCurrentNetworkPrivate",     
+	# "SetCurrentNetworkPublic",
+	
+	# "SetUnknownNetworksPrivate",  
+	# "SetUnknownNetworksPublic",
+	
+	# "EnableCtrldFolderAccess",      
+	 "DisableCtrldFolderAccess",
+	
+	# "DisableFirewall",            
+	# "EnableFirewall",
+	
+	# "DisableDefender",            
+	# "EnableDefender",
+	
+	# "DisableDefenderCloud",       
+	# "EnableDefenderCloud",
+
+	# "DisableUpdateMSRT",          
+	# "EnableUpdateMSRT",
+
+	# "DisableUpdateDriver",        
+	# "EnableUpdateDriver",
+	
+	  "DisableUpdateRestart",         
+	# "EnableUpdateRestart",
+	
+	  "DisableHomeGroups",            
+	# "EnableHomeGroups",
+	
+	  "DisableSharedExperiences",     
+	# "EnableSharedExperiences",
+	
+	  "DisableRemoteAssistance",      
+	# "EnableRemoteAssistance",
+	
+	  "DisableRemoteDesktop",         
+	# "EnableRemoteDesktop",
+	
+	  "DisableAutoplay",              
+	# "EnableAutoplay",
+	
+	  "DisableAutorun",               
+	# "EnableAutorun",
+	
+	  "EnableStorageSense",           
+	# "DisableStorageSense",
+	
+	# "DisableDefragmentation",     
+	# "EnableDefragmentation",
+	
+	  "DisableSuperfetch",           
+	# "EnableSuperfetch",
+	
+	  "DisableIndexing",              
+	# "EnableIndexing",
+	
+	# "SetBIOSTimeUTC",             
+	# "SetBIOSTimeLocal",
+	
+	# "DisableHibernation",           
+	 "EnableHibernation",
+	
+	# "DisableFastStartup",          
+	  "EnableFastStartup",
+
+
 
 	### UI Tweaks ###
-	# "DisableActionCenter",        # "EnableActionCenter",
-	"DisableLockScreen",            # "EnableLockScreen",
-	"DisableLockScreenRS1",         # "EnableLockScreenRS1",
-	"HideNetworkFromLockScreen",    # "ShowNetworkOnLockScreen",
-	"HideShutdownFromLockScreen",   # "ShowShutdownOnLockScreen",
-	"DisableStickyKeys",            # "EnableStickyKeys",
-	"ShowTaskManagerDetails"        # "HideTaskManagerDetails",
-	"ShowFileOperationsDetails",    # "HideFileOperationsDetails",
-	# "EnableFileDeleteConfirm",    # "DisableFileDeleteConfirm",
-	"HideTaskbarSearchBox",         # "ShowTaskbarSearchBox",
-	"HideTaskView",                 # "ShowTaskView",
-	"ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
-	"ShowTaskbarTitles",            # "HideTaskbarTitles",
-	"HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
-	"ShowTrayIcons",                # "HideTrayIcons",
-	"ShowKnownExtensions",          # "HideKnownExtensions",
-	"ShowHiddenFiles",              # "HideHiddenFiles",
-	"HideSyncNotifications"         # "ShowSyncNotifications",
-	"HideRecentShortcuts",          # "ShowRecentShortcuts",
-	"SetExplorerThisPC",            # "SetExplorerQuickAccess",
-	"ShowThisPCOnDesktop",          # "HideThisPCFromDesktop",
-	# "ShowUserFolderOnDesktop",    # "HideUserFolderFromDesktop",
-	# "HideDesktopFromThisPC",      # "ShowDesktopInThisPC",
-	"HideDocumentsFromThisPC",      # "ShowDocumentsInThisPC",
-	# "HideDownloadsFromThisPC",    # "ShowDownloadsInThisPC",
-	# "HideMusicFromThisPC",        # "ShowMusicInThisPC",
-	# "HidePicturesFromThisPC",     # "ShowPicturesInThisPC",
-	# "HideVideosFromThisPC",       # "ShowVideosInThisPC",
-	"Hide3DObjectsFromThisPC",      # "Show3DObjectsInThisPC",
-	"SetVisualFXPerformance",       # "SetVisualFXAppearance",
-	# "DisableThumbnails",          # "EnableThumbnails",
-	"DisableThumbsDB",              # "EnableThumbsDB",
-	"AddENKeyboard",                # "RemoveENKeyboard",
-	"EnableNumlock", 		# "DisableNumlock"
+	
+
+
+	# "DisableActionCenter",        
+	# "EnableActionCenter",
+	
+	# "DisableLockScreen",            
+	# "EnableLockScreen",
+	
+	  "DisableLockScreenRS1",         
+	# "EnableLockScreenRS1",
+	
+	# "HideNetworkFromLockScreen",    
+	 "ShowNetworkOnLockScreen",
+	
+	# "HideShutdownFromLockScreen",   
+	 "ShowShutdownOnLockScreen",
+	
+	  "DisableStickyKeys",            
+	# "EnableStickyKeys",
+	
+	  "ShowTaskManagerDetails"        
+	# "HideTaskManagerDetails",
+	
+	  "ShowFileOperationsDetails",    
+	# "HideFileOperationsDetails",
+	
+	# "EnableFileDeleteConfirm",    
+	 "DisableFileDeleteConfirm",
+	
+	  "HideTaskbarSearchBox",         
+	# "ShowTaskbarSearchBox",
+	
+	  "HideTaskView",                 
+	# "ShowTaskView",
+	
+	  "ShowSmallTaskbarIcons",        
+	# "ShowLargeTaskbarIcons",
+	
+	# "ShowTaskbarTitles",            
+	 "HideTaskbarTitles",
+	
+	  "HideTaskbarPeopleIcon",        
+	# "ShowTaskbarPeopleIcon",
+	
+	  "ShowTrayIcons",                
+	# "HideTrayIcons",
+	
+	  "ShowKnownExtensions",          
+	# "HideKnownExtensions",
+	
+	  "ShowHiddenFiles",              
+	# "HideHiddenFiles",
+	
+	  "HideSyncNotifications"         
+	# "ShowSyncNotifications",
+	
+	  "HideRecentShortcuts",          
+	# "ShowRecentShortcuts",
+	
+	  "SetExplorerThisPC",            
+	# "SetExplorerQuickAccess",
+	
+	  "ShowThisPCOnDesktop",          
+	# "HideThisPCFromDesktop",
+	
+	# "ShowUserFolderOnDesktop",    
+	# "HideUserFolderFromDesktop",
+	
+	# "HideDesktopFromThisPC",      
+	# "ShowDesktopInThisPC",
+	
+	  "HideDocumentsFromThisPC",      
+	# "ShowDocumentsInThisPC",
+	
+	 "HideDownloadsFromThisPC",    
+	# "ShowDownloadsInThisPC",
+	
+	 "HideMusicFromThisPC",        
+	# "ShowMusicInThisPC",
+	
+	 "HidePicturesFromThisPC",     
+	# "ShowPicturesInThisPC",
+	
+	 "HideVideosFromThisPC",       
+	# "ShowVideosInThisPC",
+	
+	  "Hide3DObjectsFromThisPC",      
+	# "Show3DObjectsInThisPC",
+	
+	  "SetVisualFXPerformance",       
+	# "SetVisualFXAppearance",
+	
+	# "DisableThumbnails",          
+	# "EnableThumbnails",
+	
+	  "DisableThumbsDB",              
+	# "EnableThumbsDB",
+	
+	  "AddENKeyboard",                
+	# "RemoveENKeyboard",
+	
+	  "EnableNumlock", 		
+	# "DisableNumlock",
+
+
+
+
+	### Other tweaks ###
+
+
+
+	 "OtherTweaks",
+
+	# "Download",
+	
+	 "ChocoInstall"
 )
 
 
 # Main settings
-# Set Computer Name
-(Get-WmiObject Win32_ComputerSystem).Rename("HP") | Out-Null
+Function MainSettings {
+	## Set Computer Name
+	(Get-WmiObject Win32_ComputerSystem).Rename("Win10-PC") | Out-Null
+}
 
 # Uninstall programs
 Function Uninstall {
@@ -141,6 +304,9 @@ Function Uninstall {
 	## Uninstall Dolby
 	Get-AppxPackage "DolbyLaboratories.DolbyAccess" -AllUsers | Remove-AppxPackage
 	Get-AppXProvisionedPackage -Online | Where DisplayNam -like "DolbyLaboratories.DolbyAccess" | Remove-AppxProvisionedPackage -Online
+	## Uninstall Candy Crush Soda Saga
+	Get-AppxPackage "king.com.CandyCrushSodaSaga" -AllUsers | Remove-AppxPackage
+	Get-AppXProvisionedPackage -Online | Where DisplayNam -like "king.com.CandyCrushSodaSaga" | Remove-AppxProvisionedPackage -Online
 	## Uninstall OneNote
 	Get-AppxPackage "Microsoft.Office.OneNote" -AllUsers | Remove-AppxPackage
 	Get-AppXProvisionedPackage -Online | Where DisplayNam -like "Microsoft.Office.OneNote" | Remove-AppxProvisionedPackage -Online
@@ -178,20 +344,20 @@ Function SetPhotoViewerAssociation {
 }
 
 # Unpin all Start Menu tiles - Note: This function has no counterpart. You have to pin the tiles back manually.
-# Function UnpinStartMenuTiles {
-#	Write-Output "Unpinning all Start Menu tiles..."
-#	If ([System.Environment]::OSVersion.Version.Build -ge 15063 -And [System.Environment]::OSVersion.Version.Build -le 16299) {
-#		Get-ChildItem -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Include "*.group" -Recurse | ForEach-Object {
-#			$data = (Get-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data").Data -Join ","
-#			$data = $data.Substring(0, $data.IndexOf(",0,202,30") + 9) + ",0,202,80,0,0"
-#			Set-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data" -Type Binary -Value $data.Split(",")
-#		}
-#	} ElseIf ([System.Environment]::OSVersion.Version.Build -eq 17133) {
-#		$key = Get-ChildItem -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Recurse | Where-Object { $_ -like "*start.tilegrid`$windows.data.curatedtilecollection.tilecollection\Current" }
-#		$data = (Get-ItemProperty -Path $key.PSPath -Name "Data").Data[0..25] + ([byte[]](202,50,0,226,44,1,1,0,0))
-#		Set-ItemProperty -Path $key.PSPath -Name "Data" -Type Binary -Value $data
-#	}
-#}
+Function UnpinStartMenuTiles {
+	Write-Output "Unpinning all Start Menu tiles..."
+	If ([System.Environment]::OSVersion.Version.Build -ge 15063 -And [System.Environment]::OSVersion.Version.Build -le 16299) {
+		Get-ChildItem -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Include "*.group" -Recurse | ForEach-Object {
+			$data = (Get-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data").Data -Join ","
+			$data = $data.Substring(0, $data.IndexOf(",0,202,30") + 9) + ",0,202,80,0,0"
+			Set-ItemProperty -Path "$($_.PsPath)\Current" -Name "Data" -Type Binary -Value $data.Split(",")
+		}
+	} ElseIf ([System.Environment]::OSVersion.Version.Build -eq 17133) {
+		$key = Get-ChildItem -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\Cache\DefaultAccount" -Recurse | Where-Object { $_ -like "*start.tilegrid`$windows.data.curatedtilecollection.tilecollection\Current" }
+		$data = (Get-ItemProperty -Path $key.PSPath -Name "Data").Data[0..25] + ([byte[]](202,50,0,226,44,1,1,0,0))
+		Set-ItemProperty -Path $key.PSPath -Name "Data" -Type Binary -Value $data
+	}
+}
 
 # Tweaks
 ## Relaunch the script with administrator privileges
@@ -1392,58 +1558,55 @@ Function DisableNumlock {
 }
 
 # ===============================================
-
 # Other tweaks
-# Privacy
-## Microphone: Don't let apps use microphone: Allow, Deny
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{2EEF81BE-33FA-4800-9670-1CD474972
-C3F}" "Value" "Deny"
-## Camera: Don't let apps use camera: Allow, Deny
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E5323777-F976-4f5b-9B55-B94699C46
-E44}" "Value" "Deny"
-## Feedback: Windows should never ask for my feedback
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf" -Type Folder | Out-Nul
-l}
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Type Fold
-er | Out-Null}
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" "NumberOfSIUFInPeriod" 0
-## Calendar: Don't let apps access calendar: Allow, Deny
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E6121
-A3}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E4
-71E6121A3}" -Type Folder | Out-Null}
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E612
-1A3}" "Value" "Deny"
+# ===============================================
 
-## Call History: Don't let apps access call history: Allow, Deny
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2B3B41D7
-AB}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2
-B3B41D7AB}" -Type Folder | Out-Null}
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2B3B41D
-7AB}" "Value" "Deny"
+Function OtherTweaks {
+	# Privacy
+	## Microphone: Don't let apps use microphone: Allow, Deny
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{2EEF81BE-33FA-4800-9670-1CD474972
+	C3F}" "Value" "Deny"
+	## Camera: Don't let apps use camera: Allow, Deny
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{E5323777-F976-4f5b-9B55-B94699C46
+	E44}" "Value" "Deny"
+	## Feedback: Windows should never ask for my feedback
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf" -Type Folder | Out-Nul
+	l}
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Type Fold
+	er | Out-Null}
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" "NumberOfSIUFInPeriod" 0
+	## Calendar: Don't let apps access calendar: Allow, Deny
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E6121
+	A3}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E4
+	71E6121A3}" -Type Folder | Out-Null}
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{D89823BA-7180-4B81-B50C-7E471E612
+	1A3}" "Value" "Deny"
 
-## Email: Don't let apps read and send email: Allow, Deny
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC04
-C5}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA
-7BFCC04C5}" -Type Folder | Out-Null}
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC0
-4C5}" "Value" "Deny"
-## Messaging: Don't let apps read or send messages (text or MMS): Allow, Deny
-if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C15
-48}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-300
-3349C1548}" -Type Folder | Out-Null}
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C1548}" "Value" "Deny"
+	## Call History: Don't let apps access call history: Allow, Deny
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2B3B41D7
+	AB}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2
+	B3B41D7AB}" -Type Folder | Out-Null}
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{8BC668CF-7728-45BD-93F8-CF2B3B41D
+	7AB}" "Value" "Deny"
 
-# Explorer
-## Explorer: Show file extensions by default
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
-# Explorer: Show path in title bar
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
-# Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
+	## Email: Don't let apps read and send email: Allow, Deny
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC04
+	C5}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA
+	7BFCC04C5}" -Type Folder | Out-Null}
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{9231CB4C-BF57-4AF3-8C55-FDA7BFCC0
+	4C5}" "Value" "Deny"
+	## Messaging: Don't let apps read or send messages (text or MMS): Allow, Deny
+	if (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C15
+	48}")) {New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-300
+	3349C1548}" -Type Folder | Out-Null}
+	Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceAccess\Global\{992AFA70-6F47-4148-B3E9-3003349C1548}" "Value" "Deny"
+}
 
 # ================================================
+# Download and install programs
+# ================================================
 
-# Download
+## Download
 Function Download {
 
 }
@@ -1496,7 +1659,8 @@ Function ChocoInstall {
 
 	 #choco install visualstudio2019community -y
 	 #choco install visualstudio2019-workload-universal -y
-
+	
+	 #Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
 	 #choco install wsl-ubuntu-1804 -y
 	 #choco install python3 -y
 	 #choco install php -y
@@ -1510,13 +1674,137 @@ Function ChocoInstall {
 
 }
 
-# Name of display font
-# Set-ItemProperty $_ "FaceName"             "Source Code Pro"
-# Font Family: Raster: 0, TrueType: 54
-# Set-ItemProperty $_ "FontFamily"           54
-# Dimensions of font character in pixels, not Points: 8-byte; 4b height, 4b width. 0: Auto
-#Set-ItemProperty $_ "FontSize"             0x00110000 # 17px height x auto width
-# Boldness of font: Raster=(Normal: 0, Bold: 1), TrueType=(100-900, Normal: 400)
-#Set-ItemProperty $_ "FontWeight"           400
-# Number of commands in history buffer
-#Set-ItemProperty $_ "HistoryBufferSize"    50
+# ===============================================
+# PowerShell Console
+# ===============================================
+
+Write-Host "Configuring Console..." -ForegroundColor "Yellow"
+
+# Make 'Source Code Pro' an available Console font
+Set-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont' 000 'Source Code Pro'
+
+# Create custom path for PSReadLine Settings
+if (!(Test-Path "HKCU:\Console\PSReadLine")) {New-Item -Path "HKCU:\Console\PSReadLine" -Type Folder | Out-Null}
+
+# PSReadLine: Normal syntax color. vim Normal group. (Default: Foreground)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "NormalForeground" 0xF
+
+# PSReadLine: Comment Token syntax color. vim Comment group. (Default: 0x2)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "CommentForeground" 0x7
+
+# PSReadLine: Keyword Token syntax color. vim Statement group. (Default: 0xA)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "KeywordForeground" 0x1
+
+# PSReadLine: String Token syntax color. vim String [or Constant] group. (Default: 0x3)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "StringForeground"  0xA
+
+# PSReadLine: Operator Token syntax color. vim Operator [or Statement] group. (Default: 0x8)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "OperatorForeground" 0xB
+
+# PSReadLine: Variable Token syntax color. vim Identifier group. (Default: 0xA)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "VariableForeground" 0xB
+
+# PSReadLine: Command Token syntax color. vim Function [or Identifier] group. (Default: 0xE)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "CommandForeground" 0x1
+
+# PSReadLine: Parameter Token syntax color. vim Normal group. (Default: 0x8)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "ParameterForeground" 0xF
+
+# PSReadLine: Type Token syntax color. vim Type group. (Default: 0x7)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "TypeForeground" 0xE
+
+# PSReadLine: Number Token syntax color. vim Number [or Constant] group. (Default: 0xF)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "NumberForeground" 0xC
+
+# PSReadLine: Member Token syntax color. vim Function [or Identifier] group. (Default: 0x7)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "MemberForeground" 0xE
+
+# PSReadLine: Emphasis syntax color. vim Search group. (Default: 0xB)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "EmphasisForeground" 0xD
+
+# PSReadLine: Error syntax color. vim Error group. (Default: 0xC)
+Set-ItemProperty "HKCU:\Console\PSReadLine" "ErrorForeground" 0x4
+
+@(`
+"HKCU:\Console\%SystemRoot%_System32_bash.exe",`
+"HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe",`
+"HKCU:\Console\%SystemRoot%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe",`
+"HKCU:\Console\Windows PowerShell (x86)",`
+"HKCU:\Console\Windows PowerShell",`
+"HKCU:\Console"`
+) | ForEach {
+    	If (!(Test-Path $_)) {
+        	New-Item -path $_ -ItemType Folder | Out-Null
+ 	}
+
+	# Dimensions of window, in characters: 8-byte; 4b height, 4b width. Max: 0x7FFF7FFF (32767h x 32767w)
+	Set-ItemProperty $_ "WindowSize"           0x002D0078 # 45h x 120w
+	# Dimensions of screen buffer in memory, in characters: 8-byte; 4b height, 4b width. Max: 0x7FFF7FFF (32767h x 32767w)
+	Set-ItemProperty $_ "ScreenBufferSize"     0x0BB80078 # 3000h x 120w
+	# Percentage of Character Space for Cursor: 25: Small, 50: Medium, 100: Large
+	Set-ItemProperty $_ "CursorSize"           100
+	# Name of display font
+	Set-ItemProperty $_ "FaceName"             "Source Code Pro"
+	# Font Family: Raster: 0, TrueType: 54
+	Set-ItemProperty $_ "FontFamily"           54
+	# Dimensions of font character in pixels, not Points: 8-byte; 4b height, 4b width. 0: Auto
+	Set-ItemProperty $_ "FontSize"             0x00110000 # 17px height x auto width
+	# Boldness of font: Raster=(Normal: 0, Bold: 1), TrueType=(100-900, Normal: 400)
+	Set-ItemProperty $_ "FontWeight"           400
+	# Number of commands in history buffer
+	Set-ItemProperty $_ "HistoryBufferSize"    50
+	# Discard duplicate commands
+	Set-ItemProperty $_ "HistoryNoDup"         1
+	# Typing Mode: Overtype: 0, Insert: 1
+	Set-ItemProperty $_ "InsertMode"           1
+	# Enable Copy/Paste using Mouse
+	Set-ItemProperty $_ "QuickEdit"            1
+	# Background and Foreground Colors for Window: 2-byte; 1b background, 1b foreground; Color: 0-F
+	Set-ItemProperty $_ "ScreenColors"         0x0F
+	# Background and Foreground Colors for Popup Window: 2-byte; 1b background, 1b foreground; Color: 0-F
+	Set-ItemProperty $_ "PopupColors"          0xF0
+	# Adjust opacity between 30% and 100%: 0x4C to 0xFF -or- 76 to 255
+	Set-ItemProperty $_ "WindowAlpha" 0xF2
+
+	# The 16 colors in the Console color well (Persisted values are in BGR).
+	# Theme: Jellybeans
+	Set-ItemProperty $_ "ColorTable00"         $(Convert-ConsoleColor "#151515") # Black (0)
+	Set-ItemProperty $_ "ColorTable01"         $(Convert-ConsoleColor "#8197bf") # DarkBlue (1)
+	Set-ItemProperty $_ "ColorTable02"         $(Convert-ConsoleColor "#437019") # DarkGreen (2)
+	Set-ItemProperty $_ "ColorTable03"         $(Convert-ConsoleColor "#556779") # DarkCyan (3)
+	Set-ItemProperty $_ "ColorTable04"         $(Convert-ConsoleColor "#902020") # DarkRed (4)
+	Set-ItemProperty $_ "ColorTable05"         $(Convert-ConsoleColor "#540063") # DarkMagenta (5)
+	Set-ItemProperty $_ "ColorTable06"         $(Convert-ConsoleColor "#dad085") # DarkYellow (6)
+	Set-ItemProperty $_ "ColorTable07"         $(Convert-ConsoleColor "#888888") # Gray (7)
+	Set-ItemProperty $_ "ColorTable08"         $(Convert-ConsoleColor "#606060") # DarkGray (8)
+	Set-ItemProperty $_ "ColorTable09"         $(Convert-ConsoleColor "#7697d6") # Blue (9)
+	Set-ItemProperty $_ "ColorTable10"         $(Convert-ConsoleColor "#99ad6a") # Green (A)
+	Set-ItemProperty $_ "ColorTable11"         $(Convert-ConsoleColor "#c6b6ee") # Cyan (B)
+	Set-ItemProperty $_ "ColorTable12"         $(Convert-ConsoleColor "#cf6a4c") # Red (C)
+	Set-ItemProperty $_ "ColorTable13"         $(Convert-ConsoleColor "#f0a0c0") # Magenta (D)
+	Set-ItemProperty $_ "ColorTable14"         $(Convert-ConsoleColor "#fad07a") # Yellow (E)
+	Set-ItemProperty $_ "ColorTable15" 	   $(Convert-ConsoleColor "#e8e8d3") # White (F)
+}
+
+# ===============================================
+# Parse parameters and apply tweaks
+# ===============================================
+
+## Normalize path to preset file
+$preset = ""
+$PSCommandArgs = $args
+If ($args -And $args[0].ToLower() -eq "-preset") {
+	$preset = Resolve-Path $($args | Select-Object -Skip 1)
+	$PSCommandArgs = "-preset `"$preset`""
+}
+
+## Load function names from command line arguments or a preset file
+If ($args) {
+	$tweaks = $args
+	If ($preset) {
+		$tweaks = Get-Content $preset -ErrorAction Stop | ForEach { $_.Trim() } | Where { $_ -ne "" -and $_[0] -ne "#" }
+	}
+}
+
+## Call the desired tweak functions
+$tweaks | ForEach { Invoke-Expression $_ }
