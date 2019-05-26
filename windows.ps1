@@ -1659,6 +1659,8 @@ Function ChocoInstall {
 
 	 #choco install visualstudio2019community -y
 	 #choco install visualstudio2019-workload-universal -y
+
+	 #choco install wox -y
 	
 	 #Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux"
 	 #choco install wsl-ubuntu-1804 -y
